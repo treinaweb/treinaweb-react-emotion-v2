@@ -1,22 +1,25 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled/macro";
 import { useState } from "react";
 
+const MeuSpan = styled('span')``;
+
 const MinhaDiv = styled('div')`
-  background-color: ${({ ligado }) => (ligado ? 'white' : 'red')};
+  background-color: white;
   color: blue;
   font-size: 50px;
-`;
 
-const OutraDiv = styled(MinhaDiv)`
-  padding: 25px;
-  border: 10px solid black;
+  &:hover ${MeuSpan} {
+    color: red;
+  }
 `;
 
 function App() {
-  const [ligado, setLigado] = useState(true);
   return (
-    <div onClick={() => setLigado(!ligado)}>
-      <MinhaDiv ligado={ligado}>Treina Web</MinhaDiv>
+    <div>
+      <MinhaDiv>Treina Web<br />
+        <MeuSpan>Plataforma para desenvolvedores...</MeuSpan>
+      </MinhaDiv>
+
     </div>
   )
 }
