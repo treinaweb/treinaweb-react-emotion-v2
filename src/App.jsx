@@ -10,6 +10,9 @@ const MinhaDiv = styled('div')`
 
   &:hover ${MeuSpan} {
     color: red;
+    @media (max-width: 600px) {
+      color: black;
+    }
   }
 `;
 
