@@ -1,7 +1,17 @@
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled/macro";
-import { useState } from "react";
 
 const MeuSpan = styled('span')``;
+
+const sumir = keyframes`
+  0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+`;
 
 const MinhaDiv = styled('div')`
   background-color: white;
@@ -10,6 +20,7 @@ const MinhaDiv = styled('div')`
 
   &:hover ${MeuSpan} {
     color: red;
+    animation: ${sumir} 1s ease alternate-reverse infinite;
     @media (max-width: 600px) {
       color: black;
     }
